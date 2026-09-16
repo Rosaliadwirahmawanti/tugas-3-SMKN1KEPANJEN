@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, apple-system, sans-serif;
+  background-color: #0b1329;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 820px;
+}
+
+.profile-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0, 35);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #344155;
+}
+
+.avatar-box {
+  width: 84px;
+  height: 84px;
+  background: #0f172a;
+  border: 2px solid #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  /* Tantangan : Efek Transisi Pada Avatar */
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.putar-avatar {
+  animation: putar-avatar 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes putar-avatar {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.06);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.avatar-box:hover {
+  transform: scale(1.08);
+}
+
+.student-name {  
+  font-size: 22px;
+  color: #f8fafc;
+  font-weight: 700;
+} 
+
+.student-role {  
+  color: #38bdf8;
+  font-size: 14px;  
+  font-weight: 600;  
+  margin-top: 4px; 
+  } 
+  
+.student-school {  
+  color: #94a3b8;  
+  font-size: 13px;
+  margin-top: 2px;
+} 
+    
+.btn-contact {
+  margin-top: 16px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: #0284c7;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #38bdf8;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-contact:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-heading {
+  font-size: 14px;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.bio-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.skill-matrix {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  background-color: #0f172a;
+  border: 1px solid #1e40af;
+  color: #7dd3fc;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+  border-color: #38bdf8;
+  background-color: #1e293b;
+  transform: translateY(-3px);
+}
+
+@media screen and (min-width: 680px) {
+  body {
+    padding: 32px;
+  }
+
+  .profile-card {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 36px;
+    gap: 36px;
+  }
+
+  .card-aside {
+    width: 240px;
+    flex-shrink: 0;
+    padding-bottom: 0;
+    padding-right: 28px;
+    border-bottom: none;
+    border-right: 1px solid #344155;
+    justify-content: center;
+  }
+
+  .avatar-box {
+    width: 96px;
+    height: 96px;
+    font-size: 52px;
+  }
+
+  .student-name {
+    font-size: 24px;
+  }
+
+  .btn-contact {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .card-content {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .bio-text {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .skill-matrix {
+    gap: 16px;
+  }
+
+  .project-highlight {
+    font-size: 17px;
+  }
+
+  .page-wrapper {
+    max-width: 1100px;
+  }
+
+  .profile-card {
+    gap: 50px;
+    padding: 48px;
+  }
+
+  .card-aside {
+    width: 280px;
+  }
+
+  .student-name {
+    font-size: 30px;
+  }
+
+  .student-role {
+    font-size: 16px;
+  }
+
+  .student-school {
+    font-size: 14px;
+  }
+
+  .bio-text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+.btn-tema {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.btn-tema:hover {
+  background: #38bdf8;
+  color: #0b1329;
+}
+
+body.light-mode {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light-mode .profile-card {
+  border: 1px solid #0066ff;
+  background-color: #ffffff;
+  border-color: #f8fafc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .student-name {
+  color: #0f172a;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-box {
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #38bdf8;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.modal-box h2 {
+  font-size: 22px;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  color: #0073ff;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.btn-tutup {
+  margin-top: 20px;
+  background: #ef4444;
+  border: 1px solid #38bdf8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-tutup:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+body.light-mode .skill-badge {
+  background-color: #e4e8f1;
+  border: 1px solid #1e40af;
+  color: #0073ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+body.light-mode .profile-card {
+  border-color: 1px solid #38bdf8;
+}
+
+body.light-mode .btn-contact {
+  margin-top: 16px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: #e4e8f1;
+  color: #000000;
+  text-decoration: none;
+  border: 1px solid #38bdf8;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+body.light-mode .btn-contact:hover {
+  color: #ffffff;
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+body.light-mode .section-heading {
+   font-size: 14px;
+  color: #4a29c0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+body.light-mode .modal-box {
+  background: #d5dae2;
+  color: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #38bdf8;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .modal-box h2 {
+  font-size: 22px;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+body.light-mode .modal-box p {
+  font-size: 14px;
+  color: #0073ff;
+  line-height: 1.6;
+  word-break: break-all;
+}
